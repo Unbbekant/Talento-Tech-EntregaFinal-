@@ -1,0 +1,191 @@
+/* Reset & General Styles */
+:root {
+    --primary-color: #3b82f6; /* Soft modern blue */
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --dark-bg: #0f172a;
+    --light-bg: #f8fafc;
+    --font-main: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: #334155;
+    scroll-behavior: smooth;
+}
+
+/* Header & Navigation Styling */
+header {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar-brand span {
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #475569 !important;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section with Beautiful Gradient Background (CSS Background property requirement) */
+.hero-section {
+    height: 60vh;
+    min-height: 450px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%), 
+                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Products Cards (Flexbox layout combined with Bootstrap responsiveness) */
+.product-card {
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.product-img-wrapper {
+    padding: 20px;
+    background-color: #fff;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+}
+
+.product-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.8rem;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+/* CSS Grid Layout for Reviews (Grid requirement) */
+.reseñas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.reseña-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.client-avatar {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+}
+
+/* Contact Section CSS adaptation & Media Queries */
+.hover-white:hover {
+    color: #ffffff !important;
+}
+
+/* Media Queries for responsive customization of CSS grid & other sections */
+@media (max-width: 991.98px) {
+    .reseñas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .reseñas-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hero-section {
+        height: 50vh;
+        text-align: center;
+    }
+    
+    #contacto {
+        padding: 30px 15px;
+    }
+}
+
+/* Extra accessibility adjustments for keyboard navigation */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
