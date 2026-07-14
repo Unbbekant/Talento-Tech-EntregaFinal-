@@ -10,7 +10,7 @@
 
 # Puedes ver el sitio funcionando en el siguiente enlace:
 
-# 👉 \*\*\[Tus archivos ya subidos a GitHub Pages](https://tu-usuario.github.io/tu-repositorio/)\*\* \*(¡No te olvides de reemplazar esto por tu link real!)\*
+# 👉 https://unbbekant.github.io/Talento-Tech-EntregaFinal-/
 
 # 
 
